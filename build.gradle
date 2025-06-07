@@ -24,23 +24,25 @@ repositories {
 }
 
 dependencies {
-    // 스프링 라이브러리
+    // 스프링
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    // 롬복 라이브러리
+    // 롬복
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    // JDBC 라이브러리
+    // MySql JDBC
     runtimeOnly 'com.mysql:mysql-connector-j'
-    // 마이바티스 라이브러리
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
-    // 사용자 정의 AOP 라이브러리
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
-    // 웹소켓 라이브러리
-    implementation 'org.springframework.boot:spring-boot-starter-websocket'
-    // json 라이브러리
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
+    // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // 비크립트 // 나중에 비밀번호 만들시 사용
+    implementation 'org.springframework.security:spring-security-crypto:6.4.4'
+    // JJWT // 나중에 token 사용시 사용
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+    implementation 'io.jsonwebtoken:jjwt:0.12.6'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+    // Redis // token 사용시 대비할시 사용
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 }
 
 tasks.named('test') {
