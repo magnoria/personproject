@@ -6,7 +6,7 @@ import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 @Entity
-@Table(name = "board")
+@Table(name = "history")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -19,7 +19,7 @@ public class BoardEntity extends BaseTime {
     @Column(nullable = false)
     private String bname;
     @Column(nullable = false , unique = true)
-    private String bprivateNum;
+    private String bprivate_Num;
     @Column(nullable = false , unique = true)
     private String bphone;
     @Column
@@ -33,6 +33,7 @@ public class BoardEntity extends BaseTime {
         return BoardDto.builder()
                 .bno(bno)
                 .bname(bname)
+                .bprivate_Num(bprivate_Num)
                 .bphone(bphone)
                 .bnickname(bnickname)
                 .createAt(this.getCreateAt())

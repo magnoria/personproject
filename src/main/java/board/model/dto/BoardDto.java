@@ -15,7 +15,7 @@ public class BoardDto {
     // 입력 번호
     private int bno;
     private String bname;
-    private String bprivateNum;
+    private String bprivate_Num;
     private String bphone;
     private String bnickname;
     private LocalDateTime createAt;
@@ -26,7 +26,7 @@ public class BoardDto {
         return BoardEntity.builder()
                 .bno(bno)
                 .bname(bname)
-                .bprivateNum(bprivateNum)
+                .bprivate_Num(bprivate_Num)
                 .bphone(bphone)
                 .bnickname(bnickname)
                 .state(state)

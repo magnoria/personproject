@@ -59,7 +59,7 @@ public class BoardService {
         boardEntity.setBname(boardDto.getBname());
         boardEntity.setBnickname(boardDto.getBnickname());
         boardEntity.setBphone(boardDto.getBphone());
-        boardEntity.setBprivateNum(boardDto.getBnickname());
+        boardEntity.setBprivate_Num(boardDto.getBnickname());
 
         return true;
     }
