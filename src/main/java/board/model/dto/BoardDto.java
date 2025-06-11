@@ -1,6 +1,7 @@
 package board.model.dto;
 
 
+import board.model.entity.BoardEntity;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -8,7 +9,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter@Setter
+@Getter@Setter@ToString
 public class BoardDto {
 
     // 입력 번호
@@ -19,5 +20,16 @@ public class BoardDto {
     private String bnickname;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
+    private int state;
 
+    public BoardEntity toEntity(){
+        return BoardEntity.builder()
+                .bno(bno)
+                .bname(bname)
+                .bprivateNum(bprivateNum)
+                .bphone(bphone)
+                .bnickname(bnickname)
+                .state(state)
+                .build();
+    }
 }

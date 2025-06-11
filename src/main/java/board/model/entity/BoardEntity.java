@@ -3,6 +3,7 @@ package board.model.entity;
 import board.model.dto.BoardDto;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "board")
@@ -23,10 +24,12 @@ public class BoardEntity extends BaseTime {
     private String bphone;
     @Column
     private String bnickname;
+    @Column@ColumnDefault("0") //(0: 정상, 1: 삭제됨 등)
+    private int state;
 
     //나중에 테이블 연결
 
-    public BoardDto dto(){
+    public BoardDto todto(){
         return BoardDto.builder()
                 .bno(bno)
                 .bname(bname)
@@ -34,6 +37,7 @@ public class BoardEntity extends BaseTime {
                 .bnickname(bnickname)
                 .createAt(this.getCreateAt())
                 .updateAt(this.getUpdateAt())
+                .state(state)
                 .build();
     }
 

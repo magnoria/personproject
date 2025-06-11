@@ -23,7 +23,7 @@ public class BoardController {
         log.info("보드 dto 정보 : {}" , boardDto );
         log.info("boardController.regist 진입");
 
-        boolean result = BoardService.regist(boardDto);
+        boolean result = boardService.regist(boardDto);
         if (result){
             return ResponseEntity.status(201).body(true);
         } else {
@@ -35,7 +35,7 @@ public class BoardController {
     @GetMapping("/read")
     public ResponseEntity<List<BoardDto>> read(){
         log.info("boardController.read 진입");
-        List<BoardDto> result = BoardService.read();
+        List<BoardDto> result = boardService.read();
         if (result != null){
             return ResponseEntity.status(201).body(result);
         } else {
@@ -49,7 +49,7 @@ public class BoardController {
         log.info("보드 dto 정보 : {}" , bno );
         log.info("boardController.choicer 진입");
 
-        BoardDto result = BoardService.choicer(bno);
+        BoardDto result = boardService.choicer(bno);
 
         if (result != null){
             return ResponseEntity.status(201).body(result);
@@ -88,7 +88,7 @@ public class BoardController {
         }
     }
 
-    //6 개별삭제
+    //6 개별삭제 필요시 추가
 
 
 }
